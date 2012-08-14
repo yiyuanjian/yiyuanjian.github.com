@@ -11,7 +11,7 @@ tags: [php, share memory, count, high performance]
 `共享内存`是指多进程/线程环境中供进程间通信的内存，在Linux环境中，共享内存位于/dev/shm下, 默认设置大概是物理内存的一半。/dev/shm目录可当作普通目录使用。数据保存在内存中，所以操作起来效率比操作磁盘上的文件高，当我们的应用需要高性能的时候就可以将一些临时文件，缓存等文件放在这个目录以提高读写性能。不足的地方是机器重启后数据就丢失了。当物理内存不够时，共享内存的部分可能位于交换区中，这时候性能就会下降。
 通过`df -h`命令查看共享内存空间
 
-    $ du -h
+    $ df -h
     Filesystem            Size  Used Avail Use% Mounted on
     /dev/mapper/vg00-lv00
                            40G  3.4G   35G   9% /
