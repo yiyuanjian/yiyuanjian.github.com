@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "PHP调用异步服务"
-description: "PHP 执行异步请求"
+title: "PHP异步调用服务"
+description: "PHP 异步 服务 system popen file_get_contents timeout "
 category: php
 tags: [php, 异步, non-block]
 ---
@@ -45,4 +45,4 @@ Ex:
 当一些任务的实时性要求没那么高的时候，我们可以将任务保存下来，由后端的服务去取出来执行。可以把任务保存在文件里，或者Memcache, Database里面。
 
 
-实际生产中，我的做饭是分别编写web端和脚本端，然后由web保存任务状态，然后调用脚本异步执行，实时返回后告诉用户任务已经在执行了，并且保持论询获取任务的状态，当脚本执行完以后会更新任务的状态。
+实际生产中，我的做法是分别编写web应用和脚本，由web应用生成任务状态，然后调用脚本异步执行，web应用实时返回告诉用户任务已经在执行了，浏览器使用ajax保持论询获取任务状态，当脚本执行完以后页面就更新告诉用户。
